@@ -1,4 +1,5 @@
 import random
+import re
 
 def owo(input):
 	faces = [ "(・`ω´・)", "UwU", ">w<", "^w^" , ":heart_eyes:" , ":love_letter:" ]
@@ -93,3 +94,25 @@ def IsLetter(c):
 	
 def IsUpper(c):
 	return (c>='A' and c<='Z')
+	
+def dobby(input, author):
+	input = (input
+		.replace("yours", "master's")
+		.replace("your", "master's")
+		.replace("you", "master")
+		)
+	if (input[:2] == "I " or input[:2] == "i "):
+		input = author + " " + input[2:]
+	input = (input
+		.replace(" i "," " + author + " ")
+		.replace(" I "," " + author + " ")
+		.replace(" me "," " + author + " ")
+		.replace(" Me "," " + author + " ")
+		.replace(" ME "," " + author.capitalize() + " ")
+		.replace(" mE "," " + author.capitalize() + " ")
+		.replace(" my "," " + author + "'s ")
+		.replace(" My "," " + author + "'s ")
+		.replace(" MY "," " + author.capitalize() + "'s ")
+		.replace(" mY "," " + author.capitalize() + "'s ")
+		)
+	return input
