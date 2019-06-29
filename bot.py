@@ -25,18 +25,19 @@ class MyClient(discord.Client):
 			if channels[message.channel.guild.id] == message.channel.id:
 				await message.delete()
 				if modes[message.channel.guild.id] == "clap":
-					await message.channel.send(message.author.name + ": " + clap(message.content))
+					await message.channel.send("**" + message.author.name + ":** " + clap(message.content))
 				elif modes[message.channel.guild.id] == "dobby":
-					await message.channel.send(message.author.name + ": " + dobby(message.content, message.author.name))
+					await message.channel.send("**" + message.author.name + ":** " + dobby(message.content, message.author.name))
 				else:
-					await message.channel.send(message.author.name + ": " + owo(message.content))
+					await message.channel.send("**" + message.author.name + ":** " + owo(message.content))
 		
 		if message.content[:10] == "UwUchannel":
 			channelint = message.channel.id
 			channelint = int(message.content[13: len(message.content)-1])
 			channels[message.channel.guild.id] = channelint
 			modes[message.channel.guild.id] = 'uwu'
-			await message.channel.send("Chosen channel set to <#" + channelint + ">")
+			await message.channel.send("I will now lurk in <#" + str(channelint) + ">")
+			await message.channel.guild.me.edit(nick = "Literally")
 		
 		if message.content[:7] == "UwUmode":
 			modes[message.channel.guild.id] = message.content.lower()[8:]
