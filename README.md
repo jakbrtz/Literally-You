@@ -2,7 +2,7 @@
 
 Discord Bot that repeats what you say, but differently.
 
-Designate a channel in your server. Each new message gets replaced with what you literally just said. Except with a change.
+Designate a channel in your server; each new message gets replaced with what you literally just said, except with a change.
 
 ## Setup
 
@@ -16,9 +16,9 @@ Designate a channel in your server. Each new message gets replaced with what you
 
 ## Bot Commands
 
-To designate a channel, type `UwUchannel #channelname`. Make sure that #channelname turns into a hyperlink.
+To designate a channel, type `UwUchannel #channelname`. Make sure that `#channelname` turns into a hyperlink.
 
-To pick a type of repetition, type `UwUmode mode`. The modes could be:
+To pick a type of message, type `UwUmode mode`. Your options for `mode` are:
 
 * uwu
 
@@ -34,5 +34,7 @@ I made this in a rush after realising that my other submission (RNN trained on t
 Only after I made this I realised that the features in this bot are already available online, however I could not find a discord bot that does this.
 
 [owo code](https://gist.github.com/jtvjan/1308479db62d6132d80b0180bcbff08f)
+
 [moe's tools](https://honk.moe/tools.html) *(inspiration)*
+
 [dobby](https://www.youtube.com/watch?v=xCqfwXeq6_8) *(inspiration)*
