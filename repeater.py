@@ -47,11 +47,13 @@ def dobby(input, author):
 			"i": author + " ",
 			"me": author + " ",
 			"my": author + "'s ",
+			"myself": "himself ",
 			"am":"is ",
 			"do": "does ",
 			"you":"Master ",
 			"your":"Master's ",
 			"yours":"Master's ",
+			"yourself":"Master ",
 			# I added auxilery verbs so they don't get an s at the end like all the other verbs
 			"would":"would ",
 			"wouldnt":"wouldnt ",
