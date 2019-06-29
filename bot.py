@@ -1,4 +1,7 @@
 import discord
+from repeater import owo
+from repeater import clap
+from repeater import lisp
 
 # Everything that the bot does is inside this class:
 class MyClient(discord.Client):
@@ -13,7 +16,9 @@ class MyClient(discord.Client):
 		if message.author.bot:
 			return
 		
-		await message.channel.send(message.content)
+		await message.channel.send(message.author.name + ": " + owo(message.content))
+		await message.channel.send(message.author.name + ": " + clap(message.content))
+		await message.channel.send(message.author.name + ": " + lisp(message.content))
 
 # Run the bot
 client = MyClient()
