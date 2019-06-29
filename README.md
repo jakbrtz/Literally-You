@@ -1,5 +1,8 @@
-# Literally-You
-Discord Bot that repeats what you say, but differently
+# Literally You
+
+Discord Bot that repeats what you say, but differently.
+
+Designate a channel in your server. Each new message gets replaced with what you literally just said. Except with a change.
 
 ## Setup
 
@@ -11,9 +14,7 @@ Discord Bot that repeats what you say, but differently
 
 * Make sure you have the discord wrapper installed. This can be done with `pip install discord`
 
-## Using the bot
-
-The bot designates one channel per server. Every message in that message gets deleted, and replaced with what you literally just said.
+## Bot Commands
 
 To designate a channel, type `UwUchannel #channelname`. Make sure that #channelname turns into a hyperlink.
 
@@ -32,4 +33,6 @@ I made this in a rush after realising that my other submission (RNN trained on t
 
 Only after I made this I realised that the features in this bot are already available online, however I could not find a discord bot that does this.
 
-All code is licenced as Creative Commons *(or whatever, idk the legal jargon)*
+[owo code](https://gist.github.com/jtvjan/1308479db62d6132d80b0180bcbff08f)
+[moe's tools](https://honk.moe/tools.html) *(inspiration)*
+[dobby](https://www.youtube.com/watch?v=xCqfwXeq6_8) *(inspiration)*
