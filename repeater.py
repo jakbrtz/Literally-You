@@ -72,7 +72,7 @@ def dobby(input, author):
 			"might":"might ",
 			"must":"must "
 		}
-		output += cases.get(word, word + ("s " if prev == "i" else " "))
+		output += cases.get(word, word + ("s " if prev == "i" and not word.endswith("d") and not word.endswith("de") else " "))
 		prev = word
 	return output
 
