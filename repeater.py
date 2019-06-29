@@ -1,5 +1,5 @@
 import random
-import re
+import string
 
 def owo(input):
 	faces = [ "(・`ω´・)", "UwU", ">w<", "^w^" , ":heart_eyes:" , ":love_letter:" ]
@@ -37,6 +37,28 @@ def owo(input):
 def clap(input):
 	return input.replace(" ", " :clap: ")
 
+def dobby(input, author):
+	author = author.lower()
+	words = input.lower().translate(str.maketrans({key: None for key in string.punctuation})).split()
+	output = ''
+	prev = ''
+	for word in words:
+		cases = {
+			"i": author + " ",
+			"me": author + " ",
+			"my": author + "'s ",
+			"do": "does ",
+			"you":"Master ",
+			"your":"Master's ",
+			"yours":"Master's ",
+			"would":"would ",
+			"will":"will "
+		}
+		output += cases.get(word, word + ("s " if prev == "i" else " "))
+		prev = word
+	return output
+
+#this was a fun challenge to make, but I decided to not include it because it is more mean than it is funny
 def lisp(input):
 	output = ''
 	i = 0
@@ -55,32 +77,32 @@ def lisp(input):
 		if (IsUpper(curr)):
 			c = 'C'
 			t = 'T'
-		if (curr == 's'  or  curr == 'S'  or  curr == 'z'  or  curr == 'Z'):
+		if (curr == 's' or curr == 'S' or curr == 'z' or curr == 'Z'):
 			if (prev != 'S' and prev != 's' and prev != 'Z' and prev != 'z' and prev != 'T' and prev != 't'):
 				output += t
 			if ((prev != 'S' and prev != 's' and prev != 'Z' and prev != 'z')  or 
-				(next == 'S'  or  next == 's'  or  next == 'Z'  or  next == 'z')):
-				if (IsUpper(next)  or  (not IsLetter(next) and IsUpper(prev))):
+				(next == 'S' or next == 's' or next == 'Z' or next == 'z')):
+				if (IsUpper(next) or (not IsLetter(next) and IsUpper(prev))):
 					output += 'H'
 				else:
 					output += 'h'
-			if (not IsLetter(next2) and (next == 'E'  or  next == 'e')):
+			if (not IsLetter(next2) and (next == 'E' or next == 'e')):
 				i+=1
-		elif (curr == 'c'  or  curr == 'C'):
-			if (next == 'e'  or  next == 'i'  or  next == 'y'  or  next == 'E'  or  next == 'I'  or  next == 'Y'):
-				if (not (prev == 's'  or  prev == 'S'  or  prev == 'x'  or  prev == 'X')):
+		elif (curr == 'c' or curr == 'C'):
+			if (next == 'e' or next == 'i' or next == 'y' or next == 'E' or next == 'I' or next == 'Y'):
+				if (not (prev == 's' or prev == 'S' or prev == 'x' or prev == 'X')):
 					output += tell
-					if (IsUpper(next)  or  (not IsLetter(next) and IsUpper(prev))):
+					if (IsUpper(next) or (not IsLetter(next) and IsUpper(prev))):
 						output += 'H'
 					else:
 						output += 'h'
-					if (not IsLetter(next2) and (next == 'E'  or  next == 'e')):
+					if (not IsLetter(next2) and (next == 'E' or next == 'e')):
 						i+=1
-			elif not ((next == 'h'  or  next == 'H') and (prev == 't'  or  prev == 'T')):
+			elif not ((next == 'h' or next == 'H') and (prev == 't' or prev == 'T')):
 				output += curr
-		elif (curr == 'x'  or  curr == 'X'):
+		elif (curr == 'x' or curr == 'X'):
 			output += c
-			if (IsUpper(next)  or  (not IsLetter(next) and IsUpper(prev))):
+			if (IsUpper(next) or (not IsLetter(next) and IsUpper(prev))):
 				output += 'TH'
 			else:
 				output += 'th'
@@ -90,29 +112,7 @@ def lisp(input):
 	return output
 
 def IsLetter(c):
-	return (c>='a' and c<='z') or (c>='A' and c<='Z')
+	return (c >= 'a' and c <= 'z') or (c >= 'A' and c <= 'Z')
 	
 def IsUpper(c):
-	return (c>='A' and c<='Z')
-	
-def dobby(input, author):
-	input = (input
-		.replace("yours", "master's")
-		.replace("your", "master's")
-		.replace("you", "master")
-		)
-	if (input[:2] == "I " or input[:2] == "i "):
-		input = author + " " + input[2:]
-	input = (input
-		.replace(" i "," " + author + " ")
-		.replace(" I "," " + author + " ")
-		.replace(" me "," " + author + " ")
-		.replace(" Me "," " + author + " ")
-		.replace(" ME "," " + author.capitalize() + " ")
-		.replace(" mE "," " + author.capitalize() + " ")
-		.replace(" my "," " + author + "'s ")
-		.replace(" My "," " + author + "'s ")
-		.replace(" MY "," " + author.capitalize() + "'s ")
-		.replace(" mY "," " + author.capitalize() + "'s ")
-		)
-	return input
+	return (c >= 'A' and c <= 'Z')
