@@ -47,12 +47,28 @@ def dobby(input, author):
 			"i": author + " ",
 			"me": author + " ",
 			"my": author + "'s ",
+			"am":"is ",
 			"do": "does ",
 			"you":"Master ",
 			"your":"Master's ",
 			"yours":"Master's ",
+			# I added auxilery verbs so they don't get an s at the end like all the other verbs
 			"would":"would ",
-			"will":"will "
+			"wouldnt":"wouldnt ",
+			"will":"will ",
+			"wont":"wont ",
+			"could":"could ",
+			"couldnt":"couldnt ",
+			"can":"can ",
+			"cant":"cant ",
+			"should":"shall ",
+			"shall":"shall ",
+			"shouldnt":"shallnt ",
+			"shallnt":"shallnt ",
+			"have":"have ",
+			"has":"has ",
+			"might":"might ",
+			"must":"must "
 		}
 		output += cases.get(word, word + ("s " if prev == "i" else " "))
 		prev = word
